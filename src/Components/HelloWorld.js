@@ -1,11 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-class HelloWorld extends Component{
-    render(){
-        return (
-            <h1> Hello {this.props.name} </h1>
-        )
-    }
-}
+const HelloWorld = (props) => {
+  console.log(props);
+  const { name } = props;
+  return (
+    <>
+      <h1>Hello {name}</h1>
+    </>
+  );
+};
 
-export default HelloWorld
+export default HelloWorld;
