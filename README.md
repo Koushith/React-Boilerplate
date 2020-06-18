@@ -1,6 +1,6 @@
 ## Installation
 
-1. Clone this project `git clone git@github.com:QuentinWatt/simple-react-boilerplate.git learn-react`
+1. Clone this project
 2. CD into the directory `cd learn-react`
 3. Install all packages with `yarn` or `npm install`
 4. Start the server with `yarn start`

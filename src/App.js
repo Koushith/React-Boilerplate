@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -8,12 +8,12 @@ import Product from './Views/Product';
 import HelloWorld from './Components/HelloWorld';
 
 function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <div>
-      <HelloWorld name='koushith' />
-      <HelloWorld name='Preetham' />
-      <HelloWorld name='koushith' />
-      <HelloWorld name='koushith' />
+      <Header />
+
+      <Footer author='Koushith' />
     </div>
   );
 }
