@@ -14,14 +14,14 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/'>
-            <h1>This is Home Page</h1>
+            <Home />
           </Route>
 
           <Route path='/about'>
-            <h1>This is About Page</h1>
+            <About />
           </Route>
-          <Route path='/blog'>
-            <h1>This is Blog Page</h1>
+          <Route path='/products/:id'>
+            <Product />
           </Route>
         </Switch>
       </Router>
