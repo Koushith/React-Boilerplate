@@ -11,26 +11,46 @@ const Product = () => {
   const [product, setProduct] = useState({
     loading: false,
     data: null,
+    error: false,
   });
 
+  // while fetching set loader to true
   let content = null;
   useEffect(() => {
     setProduct({
       loading: true,
       data: null,
+      error: false,
     });
-    axios.get(url).then((response) => {
-      setProduct({
-        loading: false,
-        data: response.data,
+    axios
+      .get(url)
+      .then((response) => {
+        // after fetching stop the loader
+        setProduct({
+          loading: false,
+          data: response.data,
+          error: false,
+        });
+        //set the response to product
+      })
+      .catch((error) => {
+        setProduct({
+          loading: false,
+
+          error: true,
+        });
       });
-      //set the response to product
-    });
   }, [url]); //run this only when ulr is changed
 
-  // if its loading
+  // if its still loading, show the spinner
   if (product.loading) {
     content = <Loader></Loader>;
+  }
+
+  // if error -
+
+  if (product.error) {
+    content = <p>There was an error</p>;
   }
 
   //output only if product is existing
